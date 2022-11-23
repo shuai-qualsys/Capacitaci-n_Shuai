@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- wizard.assing.attendees form view -->
+    <record id="wizard_assing_attendees_view_form" model="ir.ui.view">
+        <field name="name">wizard.assing.attendees.view.form</field>
+        <field name="model">wizard.assing.attendees</field>
+        <field name="arch" type="xml">
+            <form string="Asociar assistente a un curso">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="attendees_id"/>
+                    </group>
+                    <footer>
+                        <button name="asignador" type="object" string="Asignar"/>
+                        <button special="cancel" class="oe_link" string="Cancel" />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- Wizard.assing.attendees action window -->
+    <record id="wizard_assing_attendees_action" model="ir.actions.act_window">
+        <field name="name">wizard.assing.attendees.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.assing.attendees</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

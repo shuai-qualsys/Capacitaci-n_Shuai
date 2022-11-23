@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+<!-- qualsys.school form view -->
+<record id="qualsys_school_view_form" model="ir.ui.view">
+    <field name="name">qualsys.school.view.form</field>
+    <field name="model">qualsys.school</field>
+    <field name="arch" type="xml">
+        <form string="Escuela">
+            <header>
+                <button name="qsy_capacitacion_cap.wizard_assing_courses_action" type="action" string="Asignar Curso"/>
+            </header>
+            <sheet>
+                <group>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="street"/>
+                    <field name="street_number"/>
+                    <field name="city"/>
+                    <field name="state"/>
+                    <field name="country"/>
+                    <field name="phone_one"/>
+                    <field name="phone_two"/>
+                    <field name="email"/>
+                    <field name="courses_number"/>
+                </group>
+                <notebook>
+                    <page string="Cursos"> 
+                        <field name="courses_ids"/>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+    <!-- qualsys.school tree view -->
+    <record id="qualsys_school_view_tree" model="ir.ui.view">
+        <field name="name">qualsys.school.view.tree</field>
+        <field name="model">qualsys.school</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="street"/>
+                <field name="city"/>
+                <field name="phone_one"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- qualsys.schools action window -->
+    <record id="qualsys_schools_action" model="ir.actions.act_window">
+        <field name="name">Escuelas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">qualsys.school</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+                No existen escuelas
+            </p><p>
+                <!-- More details about what a user can do with this object will be OK --> 
+                Ingresa una nueva escuela
+            </p>
+        </field>
+    </record>
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="qualsys_schools_menu_root" name="Escuelita Qualsys" />
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="qualsys_escuelas_menu" name="Escuelas" parent="qualsys_schools_menu_root" />
+    <menuitem id="qualsys_schools_menu_act" name="Registros de escuelas" parent="qualsys_escuelas_menu" action="qualsys_schools_action"/>
+     
+</odoo>

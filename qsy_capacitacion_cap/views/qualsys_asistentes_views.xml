@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+<!-- qualsys.attendees form view -->
+<record id="qualsys_asistente_view_form" model="ir.ui.view">
+    <field name="name">qualsys.attendees.view.form</field>
+    <field name="model">qualsys.attendees</field>
+    <field name="arch" type="xml">
+        <form string="Asistentes">
+            <sheet>
+                <group>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="courses_id"/>
+                    <field name="age"/>
+                    
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+    <!-- qualsys.attendees tree view -->
+    <record id="qualsys_attendees_view_tree" model="ir.ui.view">
+        <field name="name">qualsys.attendees.view.tree</field>
+        <field name="model">qualsys.attendees</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="courses_id"/>
+                <field name="age"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- qualsys.attendees action window -->
+    <record id="qualsys_asistentes_action" model="ir.actions.act_window">
+        <field name="name">Asistentes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">qualsys.attendees</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+                No existen asistentes
+            </p><p>
+                <!-- More details about what a user can do with this object will be OK --> 
+                Ingresa un nuevo asistente
+            </p>
+        </field>
+    </record>
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="qualsys_schools_menu_root" name="Escuelita Qualsys" />
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="qualsys_asistentes_menu" name="Asistentes" parent="qualsys_schools_menu_root" />
+     <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="qualsys_asistentes_menu_act" name="Registros de asistentes" parent="qualsys_asistentes_menu" action="qualsys_asistentes_action"/>
+</odoo>

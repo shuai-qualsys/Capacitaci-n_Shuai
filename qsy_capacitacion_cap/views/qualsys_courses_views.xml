@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+<!-- qualsys.courses form view -->
+<record id="qualsys_courses_view_form" model="ir.ui.view">
+    <field name="name">qualsys.courses.view.form</field>
+    <field name="model">qualsys.courses</field>
+    <field name="arch" type="xml">
+        <form string="Cursos">
+            <header>
+                <button name="qsy_capacitacion_cap.wizard_assing_attendees_action" type="action" string="Asignar Asistente"/>
+            </header>
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="duration"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="code"/>
+                    <field name="teacher_id"/>
+                    <field name="school_id"/>
+                    <field name="attendees_number"/>
+                </group>
+                <notebook>
+                    <page string="Asistentes"> 
+                        <field name="attendees_ids"/>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+    <!-- qualsys.courses tree view -->
+    <record id="qualsys_courses_view_tree" model="ir.ui.view">
+        <field name="name">qualsys.courses.view.tree</field>
+        <field name="model">qualsys.courses</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="duration"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- qualsys.courses action window -->
+    <record id="qualsys_courses_action" model="ir.actions.act_window">
+        <field name="name">Cursos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">qualsys.courses</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+                No existen cursos
+            </p><p>
+                <!-- More details about what a user can do with this object will be OK --> 
+                Ingresa un nuevo curso
+            </p>
+        </field>
+    </record>
+    
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="qualsys_schools_menu_root" name="Escuelita Qualsys" />
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="qualsys_cursos_menu" name="Cursos" parent="qualsys_schools_menu_root" />
+     <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="qualsys_cursos_menu_act" name="Registros de cursos" parent="qualsys_cursos_menu" action="qualsys_courses_action"/>
+    
+</odoo>

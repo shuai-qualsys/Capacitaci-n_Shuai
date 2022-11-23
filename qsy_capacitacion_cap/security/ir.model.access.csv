@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+qsy_capacitacion_cap.access_wizard_assing_courses,access_wizard_assing_courses,qsy_capacitacion_cap.model_wizard_assing_courses,,1,1,1,1
+qsy_capacitacion_cap.access_qualsys_attendees,access_qualsys_attendees,qsy_capacitacion_cap.model_qualsys_attendees,,1,1,1,1
+qsy_capacitacion_cap.access_qualsys_courses,access_qualsys_courses,qsy_capacitacion_cap.model_qualsys_courses,,1,1,1,1
+qsy_capacitacion_cap.access_qualsys_school,access_qualsys_school,qsy_capacitacion_cap.model_qualsys_school,,1,1,1,1
+qsy_capacitacion_cap.access_wizard_assing_attendees,access_wizard_assing_attendees,qsy_capacitacion_cap.model_wizard_assing_attendees,base.group_user,1,1,1,1
